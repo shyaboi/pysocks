@@ -1,16 +1,16 @@
-const w = 119
-const a = 97
-const s = 115
-const d = 10
-const l = 108
+// const w = 119
+// const a = 97
+// const s = 115
+// const d = 10
+// const l = 108
 // var canvas = document.getElementById("myCanvas");
 // var c=document.getElementById('myCanvas');
 // var ctx=c.getContext('2d');
 
-let rando = Math.floor(Math.random()*400)
-let x=rando,y=rando
-var loc = (x,y)=> {return [x,y]}
-ctx.translate(rando,rando)
+// let rando = Math.floor(Math.random()*400)
+// let x=rando,y=rando
+// var loc = (x,y)=> {return [x,y]}
+// ctx.translate(rando,rando)
 $('butt').click(function(e) {
   let keyPressed = e.keyCode
   console.log(keyPressed)
