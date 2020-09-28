@@ -7,7 +7,7 @@ const l = 108
 $(document).keypress(function(e) {
   let keyPressed = e.keyCode
   console.log(keyPressed)
-  if (keyPressed=="a"){ 
+  if (keyPressed==a){ 
   $.post("/a", {'lightOn':1},(data)=> {
     console.log(data)
   });}
