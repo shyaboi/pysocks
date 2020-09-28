@@ -11,7 +11,7 @@ def on():
 
 @app.route('/off', methods=['POST'])
 def off():
-    print(request.form['lightoff'])
+    print(request.form['lightOff'])
     lightOff()
     return "light off"
 
