@@ -10,7 +10,7 @@ def receive_data():
     return "light on"
 
 @app.route('/off', methods=['POST'])
-def receive_data():
+def receive_data2():
     print(request.form['lightoff'])
     lightOff()
     return "light off"
