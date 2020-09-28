@@ -16,7 +16,7 @@ def leftOn():
     lightOnA()
     return "light a on"
 @app.route('/s', methods=['POST'])
-def leftOn():
+def backOn():
     print(request.form['lightOn'])
     lightOnS()
     return "light s on"
