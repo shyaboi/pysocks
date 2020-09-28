@@ -1,32 +1,46 @@
 const w = 119
 const a = 97
 const s = 115
-const d = 100
+const d = 10
 var canvas = document.getElementById("myCanvas");
 var c=document.getElementById('myCanvas');
 var ctx=c.getContext('2d');
-ctx.translate(100,0);
-ctx.fillRect(0,0,100,50);
 
 let rando = Math.floor(Math.random()*400)
-console.log(rando)
-
+let x=rando,y=rando
+var loc = (x,y)=> {return [x,y]}
+ctx.translate(rando,rando)
 $(document).keypress(function(e) {
   let keyPressed = e.keyCode
   // console.log(keyPressed)
-  $.post("/push", {'keyPressed':keyPressed, 'playerNum':rando },(data)=> {
-    let y = data[1]
-    let x = data[0]
-    console.log(x,y)
+  $.post("/push", {'keyPressed':keyPressed, 'playerNum':rando, 'playerLocX':rando, 'playerLocY':rando  },(data)=> {
+    ctx.clearRect(0, 0, canvas.width, canvas.height);
+
+    if (keyPressed == w) {
+      ctx.translate(0,-1)
+      y=y-1
+      ctx.fillRect(0,0,10,10);
+      $.post("/push", {'keyPressed':keyPressed, 'playerNum':rando, 'playerLocX':x, 'playerLocY':y },(data)=> {console.log(data)})
+    }
     if (keyPressed == d) {
-      ctx.translate(10,0)
-      ctx.fillRect(0,0,100,50);
+      ctx.translate(1,0)
+      x=x+1
+      ctx.fillRect(0,0,10,10);
+      $.post("/push", {'keyPressed':keyPressed, 'playerNum':rando, 'playerLocX':x, 'playerLocY':y },(data)=> {console.log(data)})
   
     }
     if (keyPressed == s) {
-      ctx.translate(0,10)
-      ctx.fillRect(0,0,100,50);
-
+      ctx.translate(0,1)
+      y=y+1
+      $.post("/push", {'keyPressed':keyPressed, 'playerNum':rando, 'playerLocX':x, 'playerLocY':y },(data)=> {console.log(data)})
+      ctx.fillRect(0,0,10,10);
+    }
+   
+    if (keyPressed == a) {
+      ctx.translate(-1,0)
+      x=x-1
+      ctx.fillRect(0,0,10,10);
+      $.post("/push", {'keyPressed':keyPressed, 'playerNum':rando, 'playerLocX':x, 'playerLocY':y },(data)=> {console.log(data)})
     }
 
   });

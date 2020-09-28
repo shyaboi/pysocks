@@ -4,17 +4,16 @@ app = Flask(__name__)
 
 @app.route('/push', methods=['POST'])
 def receive_data():
-   print("player: " + request.form['playerNum'], "pressed the "+ request.form['keyPressed']+" key")
    playerNum = request.form['playerNum']
    keypressed = request.form['keyPressed']
-   rand1 = random.randint(1, 401)
-   rand2 = random.randint(1, 301)
-   x=str(rand1)
-   y=str(rand2)
-   player = jsonify(x,y)
-# f"player: { request.form['playerNum']} pressed the {request.form['keyPressed']} key"
-
-   return player
+   playerLocX = request.form['playerLocX']
+   playerLocY = request.form['playerLocY']
+   if playerNum != playerNum:
+       print('playa2 in the houssseeeeeeeee')
+       if playerLocX == playerLocX:
+            print('booooooooooooooooooooooooooooooooom')
+   print(f'Player# {playerNum} currently at [{playerLocX}, {playerLocY}]')
+   return jsonify(playerNum,playerLocX,playerLocY)
 @app.route('/')
 def hello():
     return render_template('index.html')
