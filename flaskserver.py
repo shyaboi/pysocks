@@ -9,7 +9,11 @@ def on():
     lightOnS()
     lightOnA()
     return "light on"
-
+@app.route('/a', methods=['POST'])
+def on():
+    print(request.form['lightOn'])
+    lightOnA()
+    return "light on"
 @app.route('/off', methods=['POST'])
 def off():
     print(request.form['lightOff'])
