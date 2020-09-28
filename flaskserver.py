@@ -10,7 +10,7 @@ def on():
     lightOnA()
     return " all lights on"
 
-@app.route('/a', methods=['POST'])
+@app.route('/w', methods=['POST'])
 def leftOn():
     print(request.form['lightOn'])
     lightOnA()
