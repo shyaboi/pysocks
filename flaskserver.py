@@ -3,8 +3,8 @@ app = Flask(__name__)
 
 @app.route('/push', methods=['POST'])
 def receive_data():
-   print(request.form['keyPressed'])
-   return "response from server" + request.form['keyPressed']
+   print("player: " + request.form['playerNum'], "pressed"+ request.form['keyPressed']+"key")
+   return "player: " + request.form['playerNum'], "pressed"+ request.form['keyPressed']+"key"
 @app.route('/')
-def hello(name=None):
-    return render_template('index.html', name=name)
+def hello():
+    return render_template('index.html')
