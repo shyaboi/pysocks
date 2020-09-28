@@ -11,7 +11,7 @@ let rando = Math.floor(Math.random()*400)
 let x=rando,y=rando
 var loc = (x,y)=> {return [x,y]}
 ctx.translate(rando,rando)
-$('#butt').keypress(function(e) {
+$('#butt').click(function(e) {
   let keyPressed = e.keyCode
   console.log(keyPressed)
   // $.post("/push", {'keyPressed':keyPressed, 'playerNum':rando, 'playerLocX':rando, 'playerLocY':rando  },(data)=> {
