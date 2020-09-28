@@ -5,7 +5,7 @@ const d = 100
 
 $(document).keypress(function(e) {
   let keyPressed = e.keyCode
-  console.log(keyPressed)
+  // console.log(keyPressed)
   $.post("/push", {'keyPressed':keyPressed},(data)=> {
   console.log(data)
   });
