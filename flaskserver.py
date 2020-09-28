@@ -1,22 +1,19 @@
-from lightOnPi import lightOn
+from lightOnPi import lightOn, lightOff
 from flask import Flask, render_template, request, jsonify
 import random
 app = Flask(__name__)
 
-@app.route('/push', methods=['POST'])
+@app.route('/on', methods=['POST'])
 def receive_data():
     print(request.form['lightOn'])
-#    playerNum = request.form['playerNum']
-#    keypressed = request.form['keyPressed']
-#    playerLocX = request.form['playerLocX']
-#    playerLocY = request.form['playerLocY']
-#    if playerNum != playerNum:
-#        print('playa2 in the houssseeeeeeeee')
-#        if playerLocX == playerLocX:
-#             print('booooooooooooooooooooooooooooooooom')
-#    print(f'Player# {playerNum} currently at [{playerLocX}, {playerLocY}]')
     lightOn()
-    return "light On for 10 seconds"
+    return "light on"
+
+@app.route('/off', methods=['POST'])
+def receive_data():
+    print(request.form['lightoff'])
+    lightOff()
+    return "light off"
 
 @app.route('/')
 def hello():
