@@ -17,7 +17,7 @@ $(document).keypress(function(e) {
       console.log(data)
     });}
     if (keyPressed==space){ 
-      $.post("/off", {'lightOn':1},(data)=> {
+      $.post("/off", {'lightOff':1},(data)=> {
         console.log(data)
       });}
 });
