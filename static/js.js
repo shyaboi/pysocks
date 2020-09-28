@@ -8,8 +8,8 @@ const space = 32
 $(document).keypress(function(e) {
   let keyPressed = e.keyCode
   console.log(keyPressed)
-  if (keyPressed==a){ 
-  $.post("/a", {'lightOn':1},(data)=> {
+  if (keyPressed==w){ 
+  $.post("/w", {'lightOn':1},(data)=> {
     console.log(data)
   });}
   if (keyPressed==s){ 
