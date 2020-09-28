@@ -1,14 +1,28 @@
-from pynput.keyboard import Listener
-import logging
+from pynput import keyboard
 
-# Setup logging
-logging.basicConfig(filename="key_log.txt", level=logging.DEBUG, format='%(asctime)s: %(message)s')
+def on_press(key):
+    try:
+        print('alphanumeric key {0} pressed'.format(
+            key.char))
+    except AttributeError:
+        print('special key {0} pressed'.format(
+            key))
 
-def on_press(key):  # The function that's called when a key is pressed
-    logging.info("Key pressed: {0}".format(key))
+def on_release(key):
+    print('{0} released'.format(
+        key))
+    if key == keyboard.Key.esc:
+        # Stop listener
+        return False
 
-def on_release(key):  # The function that's called when a key is released
-    logging.info("Key released: {0}".format(key))
+# Collect events until released
+with keyboard.Listener(
+        on_press=on_press,
+        on_release=on_release) as listener:
+    listener.join()
 
-with Listener(on_press=on_press, on_release=on_release) as listener:  # Create an instance of Listener
-    listener.join()  # Join the listener thread to the main thread to keep waiting for keys
+# ...or, in a non-blocking fashion:
+listener = keyboard.Listener(
+    on_press=on_press,
+    on_release=on_release)
+listener.start()
