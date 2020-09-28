@@ -4,11 +4,12 @@ const s = 115
 const d = 10
 const l = 108
 
-$(document).click(function(e) {
+$(document).keypress(function(e) {
   let keyPressed = e.keyCode
   console.log(keyPressed)
-  if (keyPressed=="a"){ $.post("/a", {'lightOn':1},(data)=> {
-console.log(data)
+  if (keyPressed=="a"){ 
+  $.post("/a", {'lightOn':1},(data)=> {
+    console.log(data)
   });}
 });
 

@@ -1,4 +1,8 @@
-
+// const w = 119
+// const a = 97
+// const s = 115
+// const d = 10
+// const l = 108
 // var canvas = document.getElementById("myCanvas");
 // var c=document.getElementById('myCanvas');
 // var ctx=c.getContext('2d');
