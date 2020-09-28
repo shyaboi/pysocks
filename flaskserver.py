@@ -1,4 +1,4 @@
-from lightOnPi import lightOn, lightOff
+from lightOnPi import lightOnS,lightOnA, lightOff
 from flask import Flask, render_template, request, jsonify
 import random
 app = Flask(__name__)
@@ -6,7 +6,8 @@ app = Flask(__name__)
 @app.route('/on', methods=['POST'])
 def on():
     print(request.form['lightOn'])
-    lightOn()
+    lightOnS()
+    lightOnA()
     return "light on"
 
 @app.route('/off', methods=['POST'])
