@@ -3,6 +3,7 @@ const a = 97
 const s = 115
 const d = 10
 const l = 108
+const space = 32
 
 $(document).keypress(function(e) {
   let keyPressed = e.keyCode
@@ -11,6 +12,14 @@ $(document).keypress(function(e) {
   $.post("/a", {'lightOn':1},(data)=> {
     console.log(data)
   });}
+  if (keyPressed==s){ 
+    $.post("/s", {'lightOn':1},(data)=> {
+      console.log(data)
+    });}
+    if (keyPressed==space){ 
+      $.post("/off", {'lightOn':1},(data)=> {
+        console.log(data)
+      });}
 });
 
 
