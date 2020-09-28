@@ -4,13 +4,13 @@ import random
 app = Flask(__name__)
 
 @app.route('/on', methods=['POST'])
-def receive_data():
+def on():
     print(request.form['lightOn'])
     lightOn()
     return "light on"
 
 @app.route('/off', methods=['POST'])
-def receive_data2():
+def off():
     print(request.form['lightoff'])
     lightOff()
     return "light off"
