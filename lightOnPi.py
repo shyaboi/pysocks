@@ -5,13 +5,13 @@ def forwardRed():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(21,GPIO.OUT)
-    print ("LED on")
+    print ("red team forward")
     GPIO.output(21,GPIO.HIGH)
 def forwardBlue():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(20,GPIO.OUT)
-    print ("LED on")
+    print ("blue team forward")
     GPIO.output(20,GPIO.HIGH)
 def forwardAll():
     forwardBlue()
