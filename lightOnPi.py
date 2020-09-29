@@ -25,8 +25,8 @@ def left():
     GPIO.output(21,GPIO.LOW)
 def right():
     forwardRed()
-    GPIO.setup(21,GPIO.OUT)
-    GPIO.output(21,GPIO.LOW)
+    GPIO.setup(20,GPIO.OUT)
+    GPIO.output(20,GPIO.LOW)
 
 def stop():
     print ("LED off")
