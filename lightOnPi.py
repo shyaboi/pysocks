@@ -13,6 +13,10 @@ def forwardBlue():
     GPIO.setup(20,GPIO.OUT)
     print ("LED on")
     GPIO.output(20,GPIO.HIGH)
+def forwardAll():
+    forwardBlue()
+    forwardRed()
+
 def lightOff():
     print ("LED off")
     GPIO.setmode(GPIO.BCM)

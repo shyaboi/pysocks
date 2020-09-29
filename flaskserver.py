@@ -1,4 +1,4 @@
-from lightOnPi import forwardBlue,forwardRed, lightOff
+from lightOnPi import forwardBlue,forwardRed, forwardAll, lightOff
 from flask import Flask, render_template, request, jsonify
 import random
 app = Flask(__name__)
@@ -11,6 +11,7 @@ def on():
 
 @app.route('/w', methods=['POST'])
 def leftOn():
+    forwardAll()
     print(request.form['lightOn'])
     return "light a on"
 @app.route('/s', methods=['POST'])
