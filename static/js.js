@@ -9,11 +9,11 @@ $(document).keypress(function(e) {
   let keyPressed = e.keyCode
   console.log(keyPressed)
   if (keyPressed==w){ 
-  $.post("/w", {'lightOn':1},(data)=> {
+  $.post("/w", {'forward':1},(data)=> {
     console.log(data)
   });}
-  if (keyPressed==s){ 
-    $.post("/s", {'lightOn':1},(data)=> {
+  if (keyPressed==a){ 
+    $.post("/a", {'left':1},(data)=> {
       console.log(data)
     });}
     if (keyPressed==space){ 
