@@ -42,7 +42,9 @@ def stop():
     GPIO.output(20,GPIO.LOW)
 
 def rev():
-    stop()
+    print('reversing...beeep..beep...beep')
+    GPIO.output(21,GPIO.LOW)
+    GPIO.output(20,GPIO.LOW)
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(26,GPIO.OUT)
