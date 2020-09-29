@@ -1,6 +1,14 @@
 import RPi.GPIO as GPIO
 # import time
 
+GPIO.setmode(GPIO.BCM)
+GPIO.setwarnings(False)
+GPIO.setup(20,GPIO.OUT)
+GPIO.setup(21,GPIO.OUT)
+GPIO.setup(26,GPIO.OUT)
+
+
+
 def forwardRed():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
@@ -17,6 +25,7 @@ def forwardBlue():
 
 def forwardAll():
     print('all forward!!!')
+    GPIO.output(26,GPIO.LOW)
     forwardBlue()
     forwardRed()
 
