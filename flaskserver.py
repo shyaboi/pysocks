@@ -1,4 +1,4 @@
-from lightOnPi import forwardBlue,forwardRed, forwardAll, stop, left, right
+from lightOnPi import forwardBlue,forwardRed, forwardAll, stop, rev, left, right
 from flask import Flask, render_template, request, jsonify
 import random
 app = Flask(__name__)
@@ -25,6 +25,12 @@ def rightTurn():
     right()
     print(request.form['right'])
     return "right turnning"
+
+@app.route('/rev', methods=['POST'])
+def reverse():
+    rev()
+    print(request.form['rev'])
+    return "reversing"
 
 @app.route('/stop', methods=['POST'])
 def off():

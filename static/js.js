@@ -20,6 +20,10 @@ $(document).keypress(function(e) {
       $.post("/d", {'right':1},(data)=> {
         console.log(data)
       });} 
+  if (keyPressed==s){ 
+        $.post("/rev", {'rev':1},(data)=> {
+          console.log(data)
+        });} 
   if (keyPressed==space){ 
       $.post("/stop", {'stop':1},(data)=> {
         console.log(data)

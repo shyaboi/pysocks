@@ -16,24 +16,35 @@ def forwardBlue():
     GPIO.output(20,GPIO.HIGH)
 
 def forwardAll():
+    print('all forward!!!')
     forwardBlue()
     forwardRed()
 
 def left():
+    print('left hoooooo')
     forwardBlue()
     GPIO.setup(21,GPIO.OUT)
     GPIO.output(21,GPIO.LOW)
-    
+
 def right():
+    print('right hoooooo')
     forwardRed()
     GPIO.setup(20,GPIO.OUT)
     GPIO.output(20,GPIO.LOW)
 
 def stop():
-    print ("LED off")
+    print ("STOP!")
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(21,GPIO.OUT)
     GPIO.output(21,GPIO.LOW)
     GPIO.setup(20,GPIO.OUT)
     GPIO.output(20,GPIO.LOW)
+
+def rev():
+    stop()
+    GPIO.setmode(GPIO.BCM)
+    GPIO.setwarnings(False)
+    GPIO.setup(26,GPIO.OUT)
+    GPIO.output(26,GPIO.HIGH)
+
