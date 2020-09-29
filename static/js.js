@@ -31,15 +31,33 @@ $(document).keypress(function(e) {
 });
 
 
-$('#onButt').click(function(e) {
-  $.post("/on", {'lightOn':1},(data)=> {
+$('#forward').click(function(e) {
+  $.post("/w", {'forward':1},(data)=> {
 console.log(data)
   });
 });
 
 
-$('#offButt').click(function(e) {
-  $.post("/off", {'lightOff':1},(data)=> {
+$('#left').click(function(e) {
+  $.post("/a", {'left':1},(data)=> {
+console.log(data)
+  });
+});
+
+$('#right').click(function(e) {
+  $.post("/d", {'right':1},(data)=> {
+console.log(data)
+  });
+});
+
+$('#rev').click(function(e) {
+  $.post("/rev", {'rev':1},(data)=> {
+console.log(data)
+  });
+});
+
+$('#stop').click(function(e) {
+  $.post("/stop", {'stop':1},(data)=> {
 console.log(data)
   });
 });
