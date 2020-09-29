@@ -22,11 +22,13 @@ def forwardAll():
 
 def left():
     print('left hoooooo')
+    GPIO.output(26,GPIO.LOW)
     forwardBlue()
     GPIO.setup(21,GPIO.OUT)
     GPIO.output(21,GPIO.LOW)
 
 def right():
+    GPIO.output(26,GPIO.LOW)
     print('right hoooooo')
     forwardRed()
     GPIO.setup(20,GPIO.OUT)
@@ -37,9 +39,11 @@ def stop():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(21,GPIO.OUT)
-    GPIO.output(21,GPIO.LOW)
     GPIO.setup(20,GPIO.OUT)
+    GPIO.setup(26,GPIO.OUT)
+    GPIO.output(21,GPIO.LOW)
     GPIO.output(20,GPIO.LOW)
+    GPIO.output(26,GPIO.LOW)
 
 def rev():
     print('reversing...beeep..beep...beep')
