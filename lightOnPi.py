@@ -23,6 +23,7 @@ def left():
     forwardBlue()
     GPIO.setup(21,GPIO.OUT)
     GPIO.output(21,GPIO.LOW)
+    
 def right():
     forwardRed()
     GPIO.setup(20,GPIO.OUT)

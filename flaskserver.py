@@ -26,7 +26,7 @@ def rightTurn():
     print(request.form['right'])
     return "right turnning"
 
-@app.route('/off', methods=['POST'])
+@app.route('/stop', methods=['POST'])
 def off():
     print(request.form['stop'])
     stop()
