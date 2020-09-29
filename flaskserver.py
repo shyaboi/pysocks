@@ -23,12 +23,12 @@ def leftTurn():
 @app.route('/d', methods=['POST'])
 def rightTurn():
     right()
-    print(request.form['left'])
-    return "left turnning"
+    print(request.form['right'])
+    return "right turnning"
 
 @app.route('/off', methods=['POST'])
 def off():
-    print(request.form['lightOff'])
+    print(request.form['stop'])
     stop()
     return "stopping"
 

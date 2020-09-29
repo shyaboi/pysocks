@@ -16,8 +16,12 @@ $(document).keypress(function(e) {
     $.post("/a", {'left':1},(data)=> {
       console.log(data)
     });}
-    if (keyPressed==space){ 
-      $.post("/off", {'lightOff':1},(data)=> {
+  if (keyPressed==a){ 
+      $.post("/d", {'right':1},(data)=> {
+        console.log(data)
+      });} 
+  if (keyPressed==space){ 
+      $.post("/off", {'stop':1},(data)=> {
         console.log(data)
       });}
 });
