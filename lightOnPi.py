@@ -1,13 +1,13 @@
 import RPi.GPIO as GPIO
 # import time
 
-def lightOnA():
+def forwardRed():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(21,GPIO.OUT)
     print ("LED on")
     GPIO.output(21,GPIO.HIGH)
-def lightOnS():
+def forwardBlue():
     GPIO.setmode(GPIO.BCM)
     GPIO.setwarnings(False)
     GPIO.setup(20,GPIO.OUT)
