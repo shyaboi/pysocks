@@ -1,7 +1,7 @@
 const w = 119
 const a = 97
 const s = 115
-const d = 10
+const d = 100
 const l = 108
 const space = 32
 
