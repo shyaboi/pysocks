@@ -1,4 +1,4 @@
-from lightOnPi import forwardBlue,forwardRed, forwardAll, stop
+from lightOnPi import forwardBlue,forwardRed, forwardAll, stop, left
 from flask import Flask, render_template, request, jsonify
 import random
 app = Flask(__name__)
@@ -12,18 +12,19 @@ def on():
 def leftOn():
     forwardAll()
     print(request.form['forward'])
-    return "light a on"
+    return "going forward"
 
 @app.route('/a', methods=['POST'])
 def backOn():
+    left()
     print(request.form['left'])
-    return "light s on"
+    return "left turnning"
 
 @app.route('/off', methods=['POST'])
 def off():
     print(request.form['lightOff'])
     stop()
-    return "light off"
+    return "stopping"
 
 @app.route('/')
 def hello():
