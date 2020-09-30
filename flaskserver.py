@@ -3,10 +3,10 @@ from flask import Flask, render_template, request, jsonify
 import random
 app = Flask(__name__)
 
-@app.route('/on', methods=['POST'])
-def on():
-    print(request.form['lightOn'])
-    return " all lights on"
+# @app.route('/on', methods=['POST'])
+# def on():
+#     print(request.form['lightOn'])
+#     return " all lights on"
 
 @app.route('/w', methods=['POST'])
 def forward():
