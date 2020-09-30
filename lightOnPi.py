@@ -31,21 +31,19 @@ def forwardAll():
 def right():
     print('left hoooooo')
     GPIO.output(19,GPIO.LOW)
-    GPIO.output(26,GPIO.LOW)
     forwardBlue()
     GPIO.setup(21,GPIO.OUT)
     GPIO.output(21,GPIO.LOW)
     GPIO.output(26,GPIO.HIGH)
-
-
+    
 
 def left():
-    GPIO.output(19,GPIO.LOW)
     GPIO.output(26,GPIO.LOW)
     print('right hoooooo')
     forwardRed()
     GPIO.output(20,GPIO.LOW)
     GPIO.output(19,GPIO.HIGH)
+    
 
 def stop():
     print ("STOP!")
