@@ -1,6 +1,6 @@
 from lightOnPi import forwardBlue,forwardRed, forwardAll, stop, rev, left, right
 from flask import Flask, render_template, request, jsonify
-import random
+import random, time
 app = Flask(__name__)
 
 # @app.route('/on', methods=['POST'])
