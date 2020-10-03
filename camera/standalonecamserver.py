@@ -165,6 +165,14 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
     def do_POST(self):
         if self.path == '/w':
             forwardAll()
+        if self.path == '/a':
+            left()
+        if self.path == '/rev':
+            rev()
+        if self.path == '/d':
+            right()
+        if self.path == '/stop':
+            stop()
         try:
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
