@@ -21,11 +21,8 @@ PAGE="""\
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    <script
-      src="https://raw.githubusercontent.com/shyaboi/pysocks/master/camera/js.js"
-      crossorigin="anonymous"
-    ></script>
-    <link rel="stylesheet" href="./style.css" />
+    
+    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
 
 </head>
 <body>
@@ -44,7 +41,7 @@ PAGE="""\
 
 <center><h1>Raspberry Pi - Surveillance Camera</h1></center>
 <center><img src="stream.mjpg" width="640" height="480"></center>
-<script src="./js.js"></script>
+<script src="/js.js"></script>
 </body>
 
 </html>
