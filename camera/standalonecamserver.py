@@ -21,6 +21,10 @@ PAGE="""\
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
+    <script
+      src="https://raw.githubusercontent.com/shyaboi/pysocks/master/camera/js.js"
+      crossorigin="anonymous"
+    ></script>
     <link rel="stylesheet" href="./style.css" />
 
 </head>
