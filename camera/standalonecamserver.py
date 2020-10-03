@@ -8,7 +8,6 @@ import logging
 import socketserver
 from threading import Condition
 from http import server
-from flaskserver import dubW
 PAGE="""\
 <!DOCTYPE html>
 <html lang="en">
@@ -143,8 +142,6 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_header('Pragma', 'no-cache')
             self.send_header('Content-Type', 'multipart/x-mixed-replace; boundary=FRAME')
             self.end_headers()
-        elif self.path == '/w':
-            dubW()
             try:
                 while True:
                     with output.condition:
