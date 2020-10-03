@@ -143,14 +143,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_header('Pragma', 'no-cache')
             self.send_header('Content-Type', 'multipart/x-mixed-replace; boundary=FRAME')
             self.end_headers()
-        if self.path.endswith(".js"):
-            f = open(self.path)
-            self.send_response(200)
-            self.send_header('Content-type','text/javascript')
-            self.end_headers()
-            self.wfile.write(f.read())
-            f.close()
-            return
+
             try:
                 while True:
                     with output.condition:
