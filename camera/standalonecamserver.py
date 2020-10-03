@@ -36,9 +36,71 @@ PAGE="""\
 
 
 
-<center><h1>Raspberry Pi - Surveillance Camera</h1></center>
+<center><h1>Rad Mobile 2</h1></center>
 <center><img src="stream.mjpg" width="640" height="480"></center>
-<script src="./js.js"></script>
+<script>const w = 119
+const a = 97
+const s = 115
+const d = 100
+const l = 108
+const space = 32
+
+$(document).keypress(function(e) {
+  let keyPressed = e.keyCode
+  console.log(keyPressed)
+  if (keyPressed==w){ 
+  $.post("/w", {'forward':1},(data)=> {
+    console.log(data)
+  });}
+  if (keyPressed==a){ 
+    $.post("/a", {'left':1},(data)=> {
+      console.log(data)
+    });}
+  if (keyPressed==d){ 
+      $.post("/d", {'right':1},(data)=> {
+        console.log(data)
+      });} 
+  if (keyPressed==s){
+        $.post("/rev", {'rev':1},(data)=> {
+          console.log(data)
+        });} 
+  if (keyPressed==space){ 
+      $.post("/stop", {'stop':1},(data)=> {
+        console.log(data)
+      });}
+});
+
+
+$('#forward').click(function(e) {
+  $.post("/w", {'forward':1},(data)=> {
+console.log(data)
+  });
+});
+
+
+$('#left').click(function(e) {
+  $.post("/a", {'left':1},(data)=> {
+console.log(data)
+  });
+});
+
+$('#right').click(function(e) {
+  $.post("/d", {'right':1},(data)=> {
+console.log(data)
+  });
+});
+
+$('#rev').click(function(e) {
+  $.post("/rev", {'rev':1},(data)=> {
+console.log(data)
+  });
+});
+
+$('#stop').click(function(e) {
+  $.post("/stop", {'stop':1},(data)=> {
+console.log(data)
+  });
+});</script>
 </body>
 
 </html>
@@ -112,7 +174,7 @@ class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
     daemon_threads = True
 
-with picamera.PiCamera(resolution='640x480', framerate=60) as camera:
+with picamera.PiCamera(resolution='640x480', framerate=30) as camera:
     output = StreamingOutput()
     #Uncomment the next line to change your Pi's Camera rotation (in degrees)
     #camera.rotation = 90
