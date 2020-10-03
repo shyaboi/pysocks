@@ -163,7 +163,8 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_error(404)
             self.end_headers()
     def do_POST(self):
-        forwardAll()
+        if self.path == '/w':
+            forwardAll()
         try:
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
