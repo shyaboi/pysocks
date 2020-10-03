@@ -21,9 +21,6 @@ PAGE="""\
       integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
       crossorigin="anonymous"
     ></script>
-    
-    <link rel="stylesheet" href="https://unpkg.com/purecss@1.0.1/build/base-min.css">
-
 </head>
 <body>
    <button id="forward">Forward</button>
@@ -41,7 +38,7 @@ PAGE="""\
 
 <center><h1>Raspberry Pi - Surveillance Camera</h1></center>
 <center><img src="stream.mjpg" width="640" height="480"></center>
-<script src="/js.js"></script>
+<script src="js.js"></script>
 </body>
 
 </html>
@@ -74,7 +71,6 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             content = PAGE.encode('utf-8')
             self.send_response(200)
             self.send_header('Content-Type', 'text/html')
-            self.send_header('Content-type', 'text/javascript')
             self.send_header('Content-Length', len(content))
             self.end_headers()
             self.wfile.write(content)
@@ -85,6 +81,14 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_header('Pragma', 'no-cache')
             self.send_header('Content-Type', 'multipart/x-mixed-replace; boundary=FRAME')
             self.end_headers()
+        if self.path.endswith(".js"):
+            f = open(self.path)
+            self.send_response(200)
+            self.send_header('Content-type',        'text/javascript')
+            self.end_headers()
+            self.wfile.write(f.read())
+            f.close()
+            return
             try:
                 while True:
                     with output.condition:
