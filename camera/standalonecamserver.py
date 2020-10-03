@@ -40,8 +40,8 @@ PAGE="""\
 
 <center><h1>Raspberry Pi - Surveillance Camera</h1></center>
 <center><img src="stream.mjpg" width="640" height="480"></center>
-</body>
 <script src="../static/js.js"></script>
+</body>
 
 </html>
 """
