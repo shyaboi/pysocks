@@ -10,14 +10,39 @@ from threading import Condition
 from http import server
 
 PAGE="""\
-<html>
+<!DOCTYPE html>
+<html lang="en">
 <head>
-<title>Raspberry Pi - Surveillance Camera</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rad Mobile 2</title>
+    <script
+      src="https://code.jquery.com/jquery-3.5.1.js"
+      integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc="
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="../static/style.css" />
+
 </head>
 <body>
+   <button id="forward">Forward</button>
+   <br>
+   <button id="left">Left</button>
+   <button id="right">Right</button>
+   <br>
+   <button id="rev">Reverse</button>
+   <br>
+   <button id="stop">Stop</button>
+
+
+
+
+
 <center><h1>Raspberry Pi - Surveillance Camera</h1></center>
 <center><img src="stream.mjpg" width="640" height="480"></center>
 </body>
+<script src="../static/js.js"></script>
+
 </html>
 """
 
@@ -51,7 +76,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_header('Content-Length', len(content))
             self.end_headers()
             self.wfile.write(content)
-        elif self.path == '/stream.mjpg':
+        elif self.path == '/cam':
             self.send_response(200)
             self.send_header('Age', 0)
             self.send_header('Cache-Control', 'no-cache, private')
