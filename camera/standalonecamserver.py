@@ -8,6 +8,8 @@ import logging
 import socketserver
 from threading import Condition
 from http import server
+from lightOnPi import forwardBlue,forwardRed, forwardAll, stop, rev, left, right
+
 PAGE="""\
 <!DOCTYPE html>
 <html lang="en">
@@ -161,6 +163,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_error(404)
             self.end_headers()
     def do_POST(self):
+        forwardAll()
         try:
             self.send_response(200)
             self.send_header('Content-type', 'text/html')
