@@ -7,12 +7,12 @@ app = Flask(__name__)
 # def on():
 #     print(request.form['lightOn'])
 #     return " all lights on"
-
-@app.route('/w', methods=['POST'])
-def forward():
-    forwardAll()
-    print(request.form['forward'])
-    return "going forward"
+def dubW():
+    @app.route('/w', methods=['POST'])
+    def forward():
+        forwardAll()
+        print(request.form['forward'])
+        return "going forward"
 
 @app.route('/a', methods=['POST'])
 def leftTurn():
