@@ -38,7 +38,7 @@ PAGE="""\
 
 <center><h1>Raspberry Pi - Surveillance Camera</h1></center>
 <center><img src="stream.mjpg" width="640" height="480"></center>
-<script src="js.js"></script>
+<script src="./js.js"></script>
 </body>
 
 </html>
@@ -84,7 +84,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
         if self.path.endswith(".js"):
             f = open(self.path)
             self.send_response(200)
-            self.send_header('Content-type',        'text/javascript')
+            self.send_header('Content-type','text/javascript')
             self.end_headers()
             self.wfile.write(f.read())
             f.close()
