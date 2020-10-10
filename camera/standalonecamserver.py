@@ -38,7 +38,7 @@ PAGE="""\
 
 
 <center><h1>Rad Mobile 2</h1></center>
-<center><img src="stream.mjpg" width="640" height="480"></center>
+<center><img src="stream.mjpeg" width="1080" height="720"></center>
 <script>const w = 119
 const a = 97
 const s = 115
@@ -186,11 +186,11 @@ class StreamingServer(socketserver.ThreadingMixIn, server.HTTPServer):
     allow_reuse_address = True
     daemon_threads = True
 
-with picamera.PiCamera(resolution='333x222', framerate=30) as camera:
+with picamera.PiCamera(resolution='1080x720', framerate=30) as camera:
     output = StreamingOutput()
     #Uncomment the next line to change your Pi's Camera rotation (in degrees)
     #camera.rotation = 90
-    camera.start_recording(output, format='mjpeg', resize='333x222', splitter_port=1, quality=3)
+    camera.start_recording(output, format='mjpeg', resize='1080x720', splitter_port=1, quality=100)
     try:
         address = ('0.0.0.0', 8000)
         server = StreamingServer(address, StreamingHandler)
